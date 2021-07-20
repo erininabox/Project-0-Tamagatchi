@@ -30,4 +30,64 @@ const footerLinks = document.getElementById('footer-links');
 const linkGithubRepo = document.getElementById('link-github-repo');
 const linkGithubDemo = document.getElementById('link-github-demo');
 
+//////////////////////////////////////////////////////////
+// PET CLASS - first
 
+// how to organize generic pet class w/ pet types???
+
+// generic pet class:
+// name
+// age
+// hunger
+// sleepiness
+// boredom
+// boolean alive key-value, when alive=false trigger pet death
+
+
+//////////////////////////////////////////////////////////
+// CHOOSE PET
+// maybe leave until later???
+
+// would set species, image
+
+//////////////////////////////////////////////////////////
+// NAME PET - first
+
+// how to handle submit name, update pet object w/ name value
+
+
+//////////////////////////////////////////////////////////
+// PET ACTIONS
+
+// Pet Feed
+// Pet Sleep
+// Pet Play
+
+
+//////////////////////////////////////////////////////////
+// PET STATES
+
+// when state=10, trigger pet death
+// intervals for each state
+
+
+//////////////////////////////////////////////////////////
+// PET AGING
+
+// similar to pet states-- set an interval for aging that is passive/constant.
+// when age=X (WHAT SHOULD X BE?), trigger different death state
+
+//////////////////////////////////////////////////////////
+// PET DEATH FUNCTIONALITY
+
+// Death State 1: Pet dies of neglect, bad pet parent
+// Death State 2: Pet dies happy of old age
+    // Changes display by hiding status bars, etc.
+    // Message, differs depending on which death state
+
+//////////////////////////////////////////////////////////
+// EVENT LISTENERS - first
+// add listeners for clicks on buttons
+
+// event listener for submit name
+// event listener for 
