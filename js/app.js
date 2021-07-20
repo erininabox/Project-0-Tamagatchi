@@ -15,6 +15,9 @@ const actionsList = document.getElementById('actions-list');
 const actionsFeed = document.getElementById('actions-feed');
 const actionsSleep = document.getElementById('actions-sleep');
 const actionsPlay = document.getElementById('actions-play');
+const btnFeed = document.getElementById('btn-feed');
+const btnSleep = document.getElementById('btn-sleep');
+const btnPlay = document.getElementById('btn-play');
 
 const statusArea = document.getElementById('status-area');
 const statusBars = document.getElementById('status-bars');
