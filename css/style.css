@@ -10,6 +10,7 @@ label
 button
 ul
 li
+div
 nav
 footer
 
@@ -35,6 +36,10 @@ footer
 #status-hungry
 #status-sleepy
 #status-bored
+
+#bar-hungry
+#bar-sleepy
+#bar-bored
 
 #back-submit
 #btn-back
