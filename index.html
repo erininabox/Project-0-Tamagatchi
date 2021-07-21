@@ -20,10 +20,11 @@
         </figure>
         <section id='name-prompt'>
             <p id='ask-for-name'>What do you want to call your pet?</p>
-            <form id='name-form'>
-                <label for='name-field'><input type='text' id='name-field'>Enter name here</label>
-                <button id='btn-name-submit'>Submit Pet Name</button>
-            </form>
+            <label for='name-field'><input type='text' id='name-field'>Enter name here</label>
+            <button id='btn-name-submit'>Submit Pet Name</button>
+        </section>
+        <section id='notify-area'>
+            <p id='notify-message'></p>
         </section>
         <section id='actions-menu'>
             <ul id='actions-list'>
@@ -34,22 +35,23 @@
         </section>
         <section id='status-area'>
             <ul id='status-bars'>
+                <li id='status-age'>
+                    <div id='bar-age'></div>Age: 0</li>
                 <li id='status-hungry'>
-                    <div id='bar-hungry'></div>Hunger</li>
+                    <div id='bar-hungry'></div>Hunger: 0</li>
                 <li id='status-sleepy'>
-                    <div id='bar-sleepy'></div>Sleepiness</li>
+                    <div id='bar-sleepy'></div>Sleepiness: 0</li>
                 <li id='status-bored'>
-                    <div id='bar-boredom'></div>Boredom</li>
+                    <div id='bar-boredom'></div>Boredom: 0</li>
+            </ul>
+        </section>
+        <section id='back-submit'>
+            <ul id='nav-list'>
+                <li id='btn-back'><a href=''><button>Back</button></a></li>
+                <li id='btn-submit'><a href=''><button>Submit</button></a></li>
             </ul>
         </section>
     </main>
-
-    <nav>
-        <ul id='back-submit'>
-            <li id='btn-back'><a href=''>Back</a></li>
-            <li id='btn-submit'><a href=''>Submit</a></li>
-        </ul>
-    </nav>
 
     <footer>
         <ul id='footer-links'>
