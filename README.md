@@ -9,11 +9,11 @@
     - Commit early, commit often. 
     - Tell a story with your commits.
     - Each message should give a clear idea what you changed.
-- [ ] Include Wireframes and User Stories in the README
+- [x] Include Wireframes and User Stories in the README
 - [ ] Render a game in the browser
-- [ ] Include separate HTML / CSS / JavaScript files
-- [ ] Use JavaScript or jQuery for DOM manipulation (no Canvas)
-- [ ] Use semantic markup for HTML and CSS (adhere to best practices)
+- [x] Include separate HTML / CSS / JavaScript files
+- [x] Use JavaScript or jQuery for DOM manipulation (no Canvas)
+- [x] Use semantic markup for HTML and CSS (adhere to best practices)
 
 ## Necessary Deliverables
 
@@ -33,7 +33,7 @@
 
 ## Specifications
 
-- [ ] Create a repo for your tamagotchi pet
+- [x] Create a repo for your tamagotchi pet
 - [ ] Create a Class (JS Class, look at your notes if your forget) for your tamagotchi
 - [ ] Instantiate your Tamagotchi
 - [ ] Display a character of your choice on the screen to represent your pet
@@ -42,7 +42,7 @@
     - [ ] Sleepiness (1-10 scale)
     - [ ] Boredom (1-10 scale)
     - [ ] Age
-- [ ] Add buttons to the screen to feed your pet, turn off the lights, and play with your pet.
+- [x] Add buttons to the screen to feed your pet, turn off the lights, and play with your pet.
 - [ ] Add the ability to name your pet.
 - [ ] Style the page.
 - [ ] Increase your pet's age every x minutes
@@ -102,6 +102,8 @@
 9. Iterate as needed to add extras
 
 ## Installation Instructions
+
+Just go to the hosted link and enjoy in your favorite browser! Unless your favorite browser is IE or Edge. In that case, use Chrome.
 
 ## Unsolved problems
 
