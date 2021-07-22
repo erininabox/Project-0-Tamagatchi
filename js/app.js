@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // Global Constants by ID Tag
 const petPicArea = document.getElementById('pet-pic-area');
-const petPhoto = document.getElementById('pet-photo');
-const petName = document.getElementById('pet-name');
+let petPhoto = document.getElementById('pet-photo');
+let petNameDisplay = document.getElementById('pet-name-display');
 
 const namePrompt = document.getElementById('name-prompt');
 const askForName = document.getElementById('ask-for-name');
@@ -38,12 +38,13 @@ const linkGithubRepo = document.getElementById('link-github-repo');
 const linkGithubDemo = document.getElementById('link-github-demo');
 
 let myPet = null;
+let petName = null;
 //////////////////////////////////////////////////////////
 // PET CLASS - first
 
 class Pet {
-    constructor(petName) {
-        this.petName = petName;
+    constructor(nameText) {
+        this.petName = nameText;
         this.age=0;
         this.hunger=0;
         this.sleepy=0;
@@ -103,13 +104,15 @@ class Pet {
 
 function startPet() {
     console.log('start pet');
-    namePrompt.style.display = 'none';
-    myPet = new Pet(nameField.textContent);
+    nameText = getNameText();
+    myPet = new Pet(nameText);
+    petNameDisplay.textContent = nameText;
     myPet.updateAlive();
     myPet.startAge();
     myPet.startHunger();
     myPet.startSleepy();
     myPet.startBored(); 
+    namePrompt.style.display = 'none';
 };
 
 //////////////////////////////////////////////////////////
@@ -122,7 +125,10 @@ function startPet() {
 // NAME PET - first
 
 // how to handle submit name, update pet object w/ name value
-
+function getNameText() {
+    let nameText = document.getElementById("name-field").value;
+    return nameText;
+};
 
 //////////////////////////////////////////////////////////
 // PET ACTIONS
