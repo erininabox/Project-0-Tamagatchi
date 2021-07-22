@@ -5,25 +5,25 @@
 ## Technical Requirements
 
 - [x] HAVE ITS OWN REPO, under your github account. NOT A FORK.
-    - [ ] Git 20+ commits
+    - [x] Git 20+ commits
     - Commit early, commit often. 
     - Tell a story with your commits.
     - Each message should give a clear idea what you changed.
 - [x] Include Wireframes and User Stories in the README
-- [ ] Render a game in the browser
+- [x] Render a game in the browser
 - [x] Include separate HTML / CSS / JavaScript files
 - [x] Use JavaScript or jQuery for DOM manipulation (no Canvas)
 - [x] Use semantic markup for HTML and CSS (adhere to best practices)
 
 ## Necessary Deliverables
 
-- [ ] A working MVP (minium viable product) 
+- [x] A working MVP (minium viable product) 
     - what is the absolute bare minimum functionality for you game, do not make it more complex until you've completed your MVP.
     - Define what this will look like
-- [ ] A working game, built by you, hosted somewhere on the internet
-- [ ] A link to your hosted working game in the URL section of your Github repo
-- [ ] A git repository hosted on Github, with a link to your hosted game, and frequent commits dating back to the very beginning of the project.
-- [ ] A README.md file with an explanation of what the project is, your user stories, explanations of the technologies used, the approach taken, installation instructions, unsolved problems, the other components previously indicated (if applicable). In this project, also include your wireframes in the readme.
+- [x] A working game, built by you, hosted somewhere on the internet
+- [x] A link to your hosted working game in the URL section of your Github repo
+- [x] A git repository hosted on Github, with a link to your hosted game, and frequent commits dating back to the very beginning of the project.
+- [x] A README.md file with an explanation of what the project is, your user stories, explanations of the technologies used, the approach taken, installation instructions, unsolved problems, the other components previously indicated (if applicable). In this project, also include your wireframes in the readme.
 - [ ] A 10 minute presentation to your classmates and instructor, illustrating:
     - App functionality
     - Triumphs
@@ -34,20 +34,20 @@
 ## Specifications
 
 - [x] Create a repo for your tamagotchi pet
-- [ ] Create a Class (JS Class, look at your notes if your forget) for your tamagotchi
-- [ ] Instantiate your Tamagotchi
+- [x] Create a Class (JS Class, look at your notes if your forget) for your tamagotchi
+- [x] Instantiate your Tamagotchi
 - [ ] Display a character of your choice on the screen to represent your pet
-- [ ] Display the following metrics for your pet:
-    - [ ] Hunger (1-10 scale)
-    - [ ] Sleepiness (1-10 scale)
-    - [ ] Boredom (1-10 scale)
-    - [ ] Age
+- [x] Display the following metrics for your pet:
+    - [x] Hunger (1-10 scale)
+    - [x] Sleepiness (1-10 scale)
+    - [x] Boredom (1-10 scale)
+    - [x] Age
 - [x] Add buttons to the screen to feed your pet, turn off the lights, and play with your pet.
-- [ ] Add the ability to name your pet.
+- [x] Add the ability to name your pet.
 - [ ] Style the page.
-- [ ] Increase your pet's age every x minutes
-- [ ] Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
-- [ ] You pet should die if Hunger, Boredom, or Sleepiness hits 10.
+- [x] Increase your pet's age every x minutes
+- [x] Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
+- [x] You pet should die if Hunger, Boredom, or Sleepiness hits 10.
 
 ### Extras
 - [ ] Animate your pet across the screen while it's alive. Check out using jQuery to animate your pet with jQuery's animate method.
