@@ -54,44 +54,47 @@ class Pet {
         this.intSleepy = null;
         this.intBored = null;
     }
-
     startAge() {
         this.intAge = setInterval(()=> {
             this.age++;
             statusAge.textContent = 'Age: ' + this.age;
+            this.updateAlive();
         }, 60000)
     }
     startHunger() {
         this.intHunger = setInterval(()=> {
             this.hunger++;
-            statusAge.textContent = 'Hunger: ' + this.hunger;
-        }, 60000)
+            statusHungry.textContent = 'Hunger: ' + this.hunger;
+            this.updateAlive();
+        }, 20000)
     }
     startSleepy() {
         this.intSleepy = setInterval(()=> {
             this.sleepy++;
-            statusAge.textContent = 'Sleepy: ' + this.sleepy;
+            statusSleepy.textContent = 'Sleepy: ' + this.sleepy;
+            this.updateAlive();
         }, 60000)
     }
     startBored() {
         this.intBored = setInterval(()=> {
             this.bored++;
-            statusAge.textContent = 'Boredom: ' + this.bored;
-        }, 60000)
+            statusBored.textContent = 'Boredom: ' + this.bored;
+            this.updateAlive();
+        }, 1000)
     }
     updateAlive() {
         // state is changed, need to add death state triggers
-        if (this.age==20) {
-            this.alive = false;
+        if (myPet.age>=20) {
+            myPet.alive = false;
             deathOld();
-        } else if (this.hunger==10) {
-            this.alive = false;
+        } else if (myPet.hunger>=10) {
+            myPet.alive = false;
             deathNeglect();
-        } else if (this.sleepy==10) {
-            this.alive = false;
+        } else if (myPet.sleepy>=10) {
+            myPet.alive = false;
             deathNeglect();
-        } else if (this.bored==10) {
-            this.alive = false;
+        } else if (myPet.bored>=10) {
+            myPet.alive = false;
             deathNeglect();
         };
     };
@@ -102,6 +105,7 @@ function startPet() {
     console.log('start pet');
     namePrompt.style.display = 'none';
     myPet = new Pet(nameField.textContent);
+    myPet.updateAlive();
     myPet.startAge();
     myPet.startHunger();
     myPet.startSleepy();
@@ -125,15 +129,18 @@ function startPet() {
 
 // Pet Feed
 function resetFeed() {
-    myPet.hunger = 0;
+    myPet.hunger = 0; 
+    statusHungry.innerText = 'Hunger: 0';
 };
 // Pet Sleep
 function resetSleep() {
     myPet.sleepy = 0;
+    statusSleepy.innerText = 'Sleepiness: 0';
 };
 // Pet Play
 function resetBored() {
     myPet.bored = 0;
+    statusBored.innerText = 'Boredom: 0';
 };
 
 //////////////////////////////////////////////////////////
@@ -154,10 +161,16 @@ function resetBored() {
 
 // Death State 1: Old Age
 function deathOld() {
-    actionsMenu.style.display= none;
-    statusArea.style.display=none;
-    notifyArea.style.display=block;
-    notifyMessage.textContent = 'Your beloved pet has died of old age and is at peace. You were a great pet parent.';
+    if (myPet.alive==false) {
+        myPet.intAge = clearInterval();
+        myPet.intHunger = clearInterval();
+        myPet.intSleepy = clearInterval();
+        clearInterval(myPet.intBored);
+        actionsMenu.style.display='none';
+        statusArea.style.display='none';
+        notifyArea.style.display='block';
+        notifyMessage.textContent = 'Your beloved pet has died of old age and is at peace. You were a great pet parent.';
+    }
     // hide status bars
     // change pet photo
     // display message
@@ -166,11 +179,17 @@ function deathOld() {
 
 // Death State 2: Neglect
 function deathNeglect() {
-    actionsMenu.style.display= none;
-    statusArea.style.display=none;
-    notifyArea.style.display=block;
-    notifyMessage.textContent='Your pet has died and gone to pet heaven where it always has enough food, someone to play with, and a comfy place to sleep.'
-};
+    if (myPet.alive==false) {
+        myPet.intAge = clearInterval();
+        myPet.intHunger = clearInterval();
+        myPet.intSleepy = clearInterval();
+        myPet.intBored = clearInterval();
+        actionsMenu.style.display='none';
+        statusArea.style.display='none';
+        notifyArea.style.display='block';
+        notifyMessage.textContent='Your pet has died and gone to pet heaven where it always has enough food, someone to play with, and a comfy place to sleep.'
+    }
+    };
 
     // Changes display by hiding status bars, etc.
     // Message, differs depending on which death state
