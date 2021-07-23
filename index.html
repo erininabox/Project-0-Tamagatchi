@@ -10,39 +10,39 @@
 </head>
 <body>
     <header>
-        <h1>The Pet Project</h1>
+        <h1>Giga-Cat!!</h1>
     </header>
     
     <main>
         <section id='pet-pic-area'>
-            <img id='pet-photo'>
-            <p id='pet-name-display'>Test name</p>
+            <img id='pet-photo' src="/img/happy.jpg">
+            <p id='pet-name-display'> </p>
         </section>
         <section id='name-prompt'>
-            <p id='ask-for-name'>What do you want to call your pet?</p>
-            <label for='name-field'><input type='text' id='name-field'>Enter name here</label>
-            <button id='btn-name-submit'>Submit Pet Name</button>
+            <p id='ask-for-name'>What do you want to call your giga-cat?</p>
+            <input type='text' id='name-field' placeholder="Giga-Cat Name">
+            <button id='btn-name-submit' type='button' onclick="getNameText()">Submit</button>
         </section>
         <section id='notify-area'>
             <p id='notify-message'></p>
         </section>
         <section id='actions-menu'>
             <ul id='actions-list'>
-                <li id='actions-feed'><button id='btn-feed'>Feed</button></li>
-                <li id='actions-sleep'><button id='btn-sleep'>Turn off the light</button></li>
-                <li id='actions-play'><button id='btn-play'>Play with your pet</button></li>
+                <li class='actions' id='actions-feed'><button id='btn-feed'>Feed</button></li>
+                <li class='actions' id='actions-sleep'><button id='btn-sleep'>Turn off the light</button></li>
+                <li class='actions' id='actions-play'><button id='btn-play'>Play with your pet</button></li>
             </ul>
         </section>
         <section id='status-area'>
             <ul id='status-bars'>
                 <li id='status-age'>
-                    <div id='bar-age'></div>Age: 0</li>
+                    <div class='status-bar' id='bar-age'></div>Age: 0</li>
                 <li id='status-hungry'>
-                    <div id='bar-hungry'></div>Hunger: 0</li>
+                    <div class='status-bar' id='bar-hungry'></div>Hunger: 0</li>
                 <li id='status-sleepy'>
-                    <div id='bar-sleepy'></div>Sleepiness: 0</li>
+                    <div class='status-bar' id='bar-sleepy'></div>Sleepiness: 0</li>
                 <li id='status-bored'>
-                    <div id='bar-boredom'></div>Boredom: 0</li>
+                    <div class='status-bar' id='bar-boredom'></div>Boredom: 0</li>
             </ul>
         </section>
         <section id='back-submit'>

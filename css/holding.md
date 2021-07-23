@@ -1,15 +1,15 @@
-body
+
 header
 h1
 main
-figure
-figcaption
+
+p
 section
 form
 label
 button
-ul
-li
+img
+
 div
 footer
 
@@ -51,6 +51,17 @@ footer
 #btn-back
 #btn-submit
 
-#footer-links
-#link-github-repo
-#link-github-demo
+#status-area {
+    display: grid;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section {
+    justify-content: stretch;
+}
+#actions-menu {
+    display: grid;
+}

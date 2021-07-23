@@ -1,3 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quantico&display=swap');
+
+body {
+    text-align: center;
+    font-family: 'Quantico', serif;
+    background-color: #F7F7F7;
+    font-size: 16pt;
+}
+
 #back-submit {
     display: none;
+}
+
+header {
+    font-family: 'Press Start 2P', serif;
+    width: 100%;
+}
+
+p {
+    width: 400px;
+    font-size: 20pt;
+}
+
+footer {
+    font-family: 'Lucida Sans', 'Helvetica', sans-serif;
+    font-size: 14px;
+    position: relative;
+    bottom: 0px;
+    background-color: lightcoral;
+    width: 100%;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+
+
+button {
+    width: 15vw;
+    min-width: 100px;
+    padding: 15px;
+    margin: 20px;
+    font-size: 14pt;
+    font-family: 'Quantico', sans-serif;
+}
+input {
+    padding: 15px;
+    font-size: 14pt;
+    font-family: 'Quantico', sans-serif;
+}
+
+.status-bar {
+    width: 100px;
+}
+
+ul,li {
+    text-decoration: none;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+#link-github-repo {
+    display: inline;
+    margin: 10px;
+}
+#link-github-demo {
+    display: inline;
+    margin: 10px;
+}
+#pet-photo {
+    max-width: 200px;
+    min-width: 50px;
 }

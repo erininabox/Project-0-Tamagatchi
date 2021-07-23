@@ -60,28 +60,28 @@ class Pet {
             this.age++;
             statusAge.textContent = 'Age: ' + this.age;
             this.updateAlive();
-        }, 60000)
+        }, 600000)
     }
     startHunger() {
         this.intHunger = setInterval(()=> {
             this.hunger++;
             statusHungry.textContent = 'Hunger: ' + this.hunger;
             this.updateAlive();
-        }, 20000)
+        }, 200000)
     }
     startSleepy() {
         this.intSleepy = setInterval(()=> {
             this.sleepy++;
             statusSleepy.textContent = 'Sleepy: ' + this.sleepy;
             this.updateAlive();
-        }, 60000)
+        }, 600000)
     }
     startBored() {
         this.intBored = setInterval(()=> {
             this.bored++;
             statusBored.textContent = 'Boredom: ' + this.bored;
             this.updateAlive();
-        }, 1000)
+        }, 600000)
     }
     updateAlive() {
         // state is changed, need to add death state triggers
@@ -102,6 +102,9 @@ class Pet {
 
 }
 
+actionsMenu.style.display = 'none';
+statusArea.style.display = 'none';
+
 function startPet() {
     console.log('start pet');
     nameText = getNameText();
@@ -113,6 +116,8 @@ function startPet() {
     myPet.startSleepy();
     myPet.startBored(); 
     namePrompt.style.display = 'none';
+    actionsMenu.style.display = 'flex';
+    statusArea.style.display = 'flex';
 };
 
 //////////////////////////////////////////////////////////
