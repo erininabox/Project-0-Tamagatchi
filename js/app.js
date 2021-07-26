@@ -107,16 +107,16 @@ class Pet {
     };
     updateNotify() {
         if (myPet.hunger>=6) {
-            petPhoto.src='https://github.com/erininabox/Project-0-Tamagatchi/blob/gh-pages/img/hungry.jpg';
+            petPhoto.src='./Project-0-Tamagatchi/img/hungry.jpg';
             notifyMessage.innerText = myPet.petName + ' is hungry!'
         } else if (myPet.sleepy>=6) {
-            petPhoto.src='https://github.com/erininabox/Project-0-Tamagatchi/blob/gh-pages/img/sleepy.jpg';
+            petPhoto.src='./Project-0-Tamagatchi/img/sleepy.jpg';
             notifyMessage.innerText = myPet.petName + ' is sleepy!'
         } else if (myPet.bored>=6) {
-            petPhoto.src='https://github.com/erininabox/Project-0-Tamagatchi/blob/gh-pages/img/bored.jpg';
+            petPhoto.src='./Project-0-Tamagatchi/img/bored.jpg';
             notifyMessage.innerText = myPet.petName + ' is bored!'
         } else {
-            petPhoto.src='https://github.com/erininabox/Project-0-Tamagatchi/blob/gh-pages/img/happy.jpg';
+            petPhoto.src='./Project-0-Tamagatchi/img/happy.jpg';
             notifyMessage.innerText = '';
         };
     };
