@@ -60,7 +60,7 @@ class Pet {
     startAge() {
         this.intAge = setInterval(()=> {
             this.age++;
-            statusAge.textContent = 'Age: ' + this.age;
+            petAgeDisplay.textContent = 'Age: ' + this.age;
             this.updateAlive();
             this.updateNotify();
         }, 60000)
@@ -107,16 +107,16 @@ class Pet {
     };
     updateNotify() {
         if (myPet.hunger>=6) {
-            petPhoto.src='/img/hungry.jpg';
+            petPhoto.src='./img/hungry.jpg';
             notifyMessage.innerText = myPet.petName + ' is hungry!'
         } else if (myPet.sleepy>=6) {
-            petPhoto.src='/img/sleepy.jpg';
+            petPhoto.src='./img/sleepy.jpg';
             notifyMessage.innerText = myPet.petName + ' is sleepy!'
         } else if (myPet.bored>=6) {
-            petPhoto.src='/img/bored.jpg';
+            petPhoto.src='./img/bored.jpg';
             notifyMessage.innerText = myPet.petName + ' is bored!'
         } else {
-            petPhoto.src='/img/happy.jpg';
+            petPhoto.src='./img/happy.jpg';
             notifyMessage.innerText = '';
         };
     };
@@ -165,21 +165,21 @@ function resetFeed() {
     myPet.hunger = 0; 
     notifyMessage.innerText = '';
     statusHungry.innerText = 'Hunger: 0';
-    updateNotify();
+    myPet.updateNotify();
 };
 // Pet Sleep
 function resetSleep() {
     myPet.sleepy = 0;
     notifyMessage.innerText = '';
     statusSleepy.innerText = 'Sleepiness: 0';
-    updateNotify();
+    myPet.updateNotify();
 };
 // Pet Play
 function resetBored() {
     myPet.bored = 0;
     notifyMessage.innerText = '';
     statusBored.innerText = 'Boredom: 0';
-    updateNotify();
+    myPet.updateNotify();
 };
 
 //////////////////////////////////////////////////////////
