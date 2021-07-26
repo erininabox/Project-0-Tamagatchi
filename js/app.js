@@ -110,13 +110,13 @@ class Pet {
             petPhoto.src='../img/hungry.jpg';
             notifyMessage.innerText = myPet.petName + ' is hungry!'
         } else if (myPet.sleepy>=6) {
-            petPhoto.src='../gh-pages/img/sleepy.jpg';
+            petPhoto.src='../img/sleepy.jpg';
             notifyMessage.innerText = myPet.petName + ' is sleepy!'
         } else if (myPet.bored>=6) {
-            petPhoto.src='../gh-pages/img/bored.jpg';
+            petPhoto.src='../img/bored.jpg';
             notifyMessage.innerText = myPet.petName + ' is bored!'
         } else {
-            petPhoto.src='../gh-pages/img/happy.jpg';
+            petPhoto.src='../img/happy.jpg';
             notifyMessage.innerText = '';
         };
     };
