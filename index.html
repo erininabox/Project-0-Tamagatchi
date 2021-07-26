@@ -16,8 +16,11 @@
     <main>
         <section id='pet-pic-area'>
             <img id='pet-photo' src="/img/happy.jpg">
-            <p id='pet-name-display'> </p>
+            <p id='pet-name-display'></p>
+            <p id='pet-age-display'></p>
         </section>
+        
+        <div class='everything-else'>
         <section id='name-prompt'>
             <p id='ask-for-name'>What do you want to call your giga-cat?</p>
             <input type='text' id='name-field' placeholder="Giga-Cat Name">
@@ -25,6 +28,18 @@
         </section>
         <section id='notify-area'>
             <p id='notify-message'></p>
+            <p id='death-message'></p>
+        </section>
+        <section id='status-area'>
+            <div class='div-status-bar'>
+                <div class='status-bar' id='bar-hungry'>Hunger: 0</div>
+            </div>
+            <div class='div-status-bar'>
+                <div class='status-bar' id='bar-sleepy'>Sleepiness: 0</div>
+            </div>
+            <div class='div-status-bar'>
+                <div class='status-bar' id='bar-boredom'>Boredom: 0</div>
+            </div>    
         </section>
         <section id='actions-menu'>
             <ul id='actions-list'>
@@ -33,18 +48,7 @@
                 <li class='actions' id='actions-play'><button id='btn-play'>Play with your pet</button></li>
             </ul>
         </section>
-        <section id='status-area'>
-            <ul id='status-bars'>
-                <li id='status-age'>
-                    <div class='status-bar' id='bar-age'></div>Age: 0</li>
-                <li id='status-hungry'>
-                    <div class='status-bar' id='bar-hungry'></div>Hunger: 0</li>
-                <li id='status-sleepy'>
-                    <div class='status-bar' id='bar-sleepy'></div>Sleepiness: 0</li>
-                <li id='status-bored'>
-                    <div class='status-bar' id='bar-boredom'></div>Boredom: 0</li>
-            </ul>
-        </section>
+        </div>
         <section id='back-submit'>
             <ul id='nav-list'>
                 <li id='btn-back'><a href=''><button>Back</button></a></li>

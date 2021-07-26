@@ -6,52 +6,6 @@ body {
     background-color: #F7F7F7;
     font-size: 16pt;
 }
-
-#back-submit {
-    display: none;
-}
-
-header {
-    font-family: 'Press Start 2P', serif;
-    width: 100%;
-}
-
-p {
-    width: 400px;
-    font-size: 20pt;
-}
-
-footer {
-    font-family: 'Lucida Sans', 'Helvetica', sans-serif;
-    font-size: 14px;
-    position: relative;
-    bottom: 0px;
-    background-color: lightcoral;
-    width: 100%;
-    padding: 20px;
-    margin-top: 100px;
-}
-
-
-
-button {
-    width: 15vw;
-    min-width: 100px;
-    padding: 15px;
-    margin: 20px;
-    font-size: 14pt;
-    font-family: 'Quantico', sans-serif;
-}
-input {
-    padding: 15px;
-    font-size: 14pt;
-    font-family: 'Quantico', sans-serif;
-}
-
-.status-bar {
-    width: 100px;
-}
-
 ul,li {
     text-decoration: none;
     list-style: none;
@@ -59,13 +13,81 @@ ul,li {
     margin: 0px;
     display: inline;
 }
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    row-gap: 10px;
+}
+#pet-pic-area {
+    align-self: stretch;
+    justify-self: baseline;
+    margin: 0px;
+    padding: 0px;
+}
+.everything-else {
+    justify-self: top;
+    align-items: flex-start;
+}
 
+#notify-area {
+    min-height: 125px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.div-status-bar {
+    display: inline-flex;
+}
+.status-bar {
+    width: 150px;
+    background-color: lightcoral;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 20px;
+}
+#back-submit {
+    display: none;
+}
+header {
+    font-family: 'Press Start 2P', serif;
+    width: 100%;
+}
+p {
+    font-size: 20pt;
+    text-align: center;
+    vertical-align: center;
+}
+footer {
+    font-family: 'Lucida Sans', 'Helvetica', sans-serif;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0px;
+    background-color: lightcoral;
+    width: 100%;
+    padding: 20px;
+    margin-top: 100px;
+}
+button {
+    width: 15vw;
+    min-width: 150px;
+    padding: 15px;
+    margin: 20px;
+    font-size: 14pt;
+    font-family: 'Quantico', sans-serif;
+    border-radius: 25px;
+}
+input {
+    padding: 15px;
+    font-size: 14pt;
+    font-family: 'Quantico', sans-serif;
+}
 a {
     text-decoration: none;
     color: white;
 }
-
-
 #link-github-repo {
     display: inline;
     margin: 10px;

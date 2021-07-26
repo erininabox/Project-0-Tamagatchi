@@ -3,6 +3,7 @@
 const petPicArea = document.getElementById('pet-pic-area');
 let petPhoto = document.getElementById('pet-photo');
 let petNameDisplay = document.getElementById('pet-name-display');
+let petAgeDisplay = document.getElementById('pet-age-display');
 
 const namePrompt = document.getElementById('name-prompt');
 const askForName = document.getElementById('ask-for-name');
@@ -12,6 +13,7 @@ const btnNameSubmit = document.getElementById('btn-name-submit');
 
 const notifyArea = document.getElementById('notify-area');
 const notifyMessage = document.getElementById('notify-message');
+const deathMessage = document.getElementById('death-message');
 
 const actionsMenu = document.getElementById('actions-menu');
 const actionsList = document.getElementById('actions-list');
@@ -25,9 +27,9 @@ const btnPlay = document.getElementById('btn-play');
 const statusArea = document.getElementById('status-area');
 const statusBars = document.getElementById('status-bars');
 const statusAge = document.getElementById('status-age');
-const statusHungry = document.getElementById('status-hungry');
-const statusSleepy = document.getElementById('status-sleepy');
-const statusBored = document.getElementById('status-bored');
+const statusHungry = document.getElementById('bar-hungry');
+const statusSleepy = document.getElementById('bar-sleepy');
+const statusBored = document.getElementById('bar-boredom');
 
 const backSubmit = document.getElementById('back-submit');
 const btnBack = document.getElementById('btn-back');
@@ -60,28 +62,32 @@ class Pet {
             this.age++;
             statusAge.textContent = 'Age: ' + this.age;
             this.updateAlive();
-        }, 600000)
+            this.updateNotify();
+        }, 60000)
     }
     startHunger() {
         this.intHunger = setInterval(()=> {
             this.hunger++;
             statusHungry.textContent = 'Hunger: ' + this.hunger;
             this.updateAlive();
-        }, 200000)
+            this.updateNotify();
+        }, 5000);
     }
     startSleepy() {
         this.intSleepy = setInterval(()=> {
             this.sleepy++;
             statusSleepy.textContent = 'Sleepy: ' + this.sleepy;
             this.updateAlive();
-        }, 600000)
+            this.updateNotify();
+        }, 1500)
     }
     startBored() {
         this.intBored = setInterval(()=> {
             this.bored++;
             statusBored.textContent = 'Boredom: ' + this.bored;
             this.updateAlive();
-        }, 600000)
+            this.updateNotify();
+        }, 3000)
     }
     updateAlive() {
         // state is changed, need to add death state triggers
@@ -99,6 +105,21 @@ class Pet {
             deathNeglect();
         };
     };
+    updateNotify() {
+        if (myPet.hunger>=6) {
+            petPhoto.src='/img/hungry.jpg';
+            notifyMessage.innerText = myPet.petName + ' is hungry!'
+        } else if (myPet.sleepy>=6) {
+            petPhoto.src='/img/sleepy.jpg';
+            notifyMessage.innerText = myPet.petName + ' is sleepy!'
+        } else if (myPet.bored>=6) {
+            petPhoto.src='/img/bored.jpg';
+            notifyMessage.innerText = myPet.petName + ' is bored!'
+        } else {
+            petPhoto.src='/img/happy.jpg';
+            notifyMessage.innerText = '';
+        };
+    };
 
 }
 
@@ -110,21 +131,15 @@ function startPet() {
     nameText = getNameText();
     myPet = new Pet(nameText);
     petNameDisplay.textContent = nameText;
-    myPet.updateAlive();
+    petAgeDisplay.textContent = 'Age: ' + myPet.age;
     myPet.startAge();
     myPet.startHunger();
     myPet.startSleepy();
     myPet.startBored(); 
     namePrompt.style.display = 'none';
-    actionsMenu.style.display = 'flex';
-    statusArea.style.display = 'flex';
+    actionsMenu.style.display = 'inherit';
+    statusArea.style.display = 'inherit';
 };
-
-//////////////////////////////////////////////////////////
-// CHOOSE PET
-// maybe leave until later???
-
-// would set species, image
 
 //////////////////////////////////////////////////////////
 // NAME PET - first
@@ -138,34 +153,34 @@ function getNameText() {
 //////////////////////////////////////////////////////////
 // PET ACTIONS
 
+// reset function
+// If all levels are less than 6, reset to happy
+// if another level is >6 switch to that image and message
+// any button click should send it through the loop
+
+// 
+
 // Pet Feed
 function resetFeed() {
     myPet.hunger = 0; 
+    notifyMessage.innerText = '';
     statusHungry.innerText = 'Hunger: 0';
+    updateNotify();
 };
 // Pet Sleep
 function resetSleep() {
     myPet.sleepy = 0;
+    notifyMessage.innerText = '';
     statusSleepy.innerText = 'Sleepiness: 0';
+    updateNotify();
 };
 // Pet Play
 function resetBored() {
     myPet.bored = 0;
+    notifyMessage.innerText = '';
     statusBored.innerText = 'Boredom: 0';
+    updateNotify();
 };
-
-//////////////////////////////////////////////////////////
-// PET STATES
-
-// when state=10, trigger pet death
-// intervals for each state
-
-// SEE CLASS
-
-//////////////////////////////////////////////////////////
-// PET AGING
-
-// SEE CLASS
 
 //////////////////////////////////////////////////////////
 // PET DEATH FUNCTIONALITY
@@ -176,16 +191,13 @@ function deathOld() {
         myPet.intAge = clearInterval();
         myPet.intHunger = clearInterval();
         myPet.intSleepy = clearInterval();
-        clearInterval(myPet.intBored);
+        myPet.intBored = clearInterval();
+        petPicArea.style.display='none';
+        notifyMessage.style.display='none';
         actionsMenu.style.display='none';
         statusArea.style.display='none';
-        notifyArea.style.display='block';
-        notifyMessage.textContent = 'Your beloved pet has died of old age and is at peace. You were a great pet parent.';
+        deathMessage.textContent = 'Oh no! Your pet has retired!';
     }
-    // hide status bars
-    // change pet photo
-    // display message
-    // display 'start over' button
 };
 
 // Death State 2: Neglect
@@ -195,10 +207,11 @@ function deathNeglect() {
         myPet.intHunger = clearInterval();
         myPet.intSleepy = clearInterval();
         myPet.intBored = clearInterval();
+        petPicArea.style.display='none';
+        notifyMessage.style.display='none';
         actionsMenu.style.display='none';
         statusArea.style.display='none';
-        notifyArea.style.display='block';
-        notifyMessage.textContent='Your pet has died and gone to pet heaven where it always has enough food, someone to play with, and a comfy place to sleep.'
+        deathMessage.textContent='Oh no! Your pet ran away!';
     }
     };
 
@@ -206,13 +219,8 @@ function deathNeglect() {
     // Message, differs depending on which death state
 
 //////////////////////////////////////////////////////////
-// EVENT LISTENERS - first
-// add listeners for clicks on buttons
+// EVENT LISTENERS
 
-// event listener for submit name
-// event listener for 
-
-// EL for triggering aging
 btnNameSubmit.addEventListener('click', startPet);
 btnFeed.addEventListener('click', resetFeed);
 btnPlay.addEventListener('click', resetBored);
